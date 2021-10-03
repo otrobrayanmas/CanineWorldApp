@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/drawable/ic_circulo1.xml" value="0.1" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/drawable/ic_circulos.xml" value="0.1" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/drawable/ic_flecha.xml" value="0.1680921052631579" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/drawable/ic_show.xml" value="0.1" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/drawable/ic_splashlogo.xml" value="0.1680921052631579" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/drawable/mybutton.xml" value="0.1" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/drawable/splash_screen.xml" value="0.1680921052631579" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/layout/activity_iniciar_sesion.xml" value="0.264" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/layout/activity_main.xml" value="0.10400000000000001" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/layout/activity_menu.xml" value="0.144" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/layout/activity_registrarse.xml" value="0.1" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/layout/activity_splashscreen.xml" value="0.144" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/Users/bryan/AndroidStudioProjects/CanineWorld/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

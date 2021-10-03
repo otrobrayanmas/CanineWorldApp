@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+
+    <color name="negroCanino">#FF000000</color>
+    <color name="blancoCanino">#FFFFFFFF</color>
+    <color name="morado40Canino">#40339D</color>
+    <color name="morado2BCanino">#2B226B</color>
+    <color name="azul5ECanino">#5E4BEB</color>
+    <color name="morado9CCanino">#9C91EB</color>
+
+
+</resources>

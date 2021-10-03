@@ -1,0 +1,36 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.CanineWorld" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:navigationBarColor">
+            @android:color/transparent
+        </item>
+
+        <!-- Optional, if your app is drawing behind the status bar also. -->
+        <item name="android:statusBarColor">
+            @android:color/transparent
+        </item>
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryDark">@color/purple_700</item>
+        <item name="colorAccent">@color/morado40Canino</item>
+
+
+
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="SplashTheme" parent="Theme.CanineWorld">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <!-- values-v29/themes.xml -->
+
+
+
+    
+
+
+
+
+</resources>

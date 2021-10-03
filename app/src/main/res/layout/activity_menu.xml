@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blancoCanino"
+    tools:context=".MenuActivity"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="-5dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <TextView
+            android:id="@+id/TextInicio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Inicio"
+            android:textColor="@color/morado40Canino"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/TextPerfil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Perfil"
+            android:textColor="@color/morado40Canino"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/TextCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="sans-serif-medium"
+
+            android:gravity="center"
+            android:text="Carrito"
+            android:textColor="@color/morado40Canino"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/TextFavoritos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Favoritos"
+            android:textColor="@color/morado40Canino"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/TextPedidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Mis Pedidos"
+            android:textColor="@color/morado40Canino"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/TextIdioma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Idioma"
+            android:textColor="@color/morado40Canino"
+            android:textSize="27sp" />
+
+        <TextView
+            android:id="@+id/TextCerrarSesión"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="Cerrar Sesión"
+            android:textColor="@color/morado40Canino"
+            android:textSize="27sp" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
