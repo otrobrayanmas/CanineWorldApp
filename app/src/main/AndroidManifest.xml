@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CanineWorld">
         <activity
+            android:name=".CategoriaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true" />
+        <activity
+            android:name=".NotificacionesActivity"
+            android:exported="true" />
+        <activity
             android:name=".ConfirmacionActivity"
             android:exported="true" />
         <activity
