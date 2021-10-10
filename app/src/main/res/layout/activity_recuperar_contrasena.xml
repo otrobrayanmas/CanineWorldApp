@@ -81,7 +81,7 @@
             android:layout_height="match_parent"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:text="Por favor escribe tu correo electronico. Se enviará un mensaje a tu correo electrónico para restablecer la contraaseña"
+            android:text="Por favor escribe tu correo electrónico. Se enviará un mensaje a tu correo para restablecer la contraseña"
             android:textColor="@color/negroCanino"
             android:textSize="18dp" />
     </androidx.cardview.widget.CardView>

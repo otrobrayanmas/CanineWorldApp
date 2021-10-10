@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.90" />
+        app:layout_constraintGuide_percent="0.97" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cs"
@@ -181,7 +181,7 @@
                     >
                     <ImageButton
 
-                        android:id="@+id/imageView22"
+                        android:id="@+id/art1"
                         android:layout_width="wrap_content"
                         android:layout_height="178dp"
                         android:layout_margin="12dp"
@@ -217,7 +217,7 @@
 
                     <ImageButton
                         android:scaleType="centerInside"
-                        android:id="@+id/imageView31"
+                        android:id="@+id/art2"
                         android:layout_width="wrap_content"
                         android:layout_height="178dp"
                         android:layout_margin="12dp"
@@ -264,7 +264,7 @@
                     >
                     <ImageButton
 
-                        android:id="@+id/imageView2"
+                        android:id="@+id/art3"
                         android:layout_width="wrap_content"
                         android:layout_height="178dp"
                         android:layout_margin="12dp"
@@ -301,7 +301,7 @@
 
                     <ImageButton
                         android:scaleType="centerInside"
-                        android:id="@+id/imageView3"
+                        android:id="@+id/art4"
                         android:layout_width="wrap_content"
                         android:layout_height="178dp"
                         android:layout_margin="12dp"
@@ -332,19 +332,5 @@
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

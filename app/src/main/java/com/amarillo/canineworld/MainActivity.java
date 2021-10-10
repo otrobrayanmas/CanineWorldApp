@@ -32,11 +32,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
 
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
         Button btn = (Button)findViewById(R.id.button);
 

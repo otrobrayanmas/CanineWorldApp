@@ -10,55 +10,80 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CanineWorld">
         <activity
+            android:name=".FiltrosActivity"
+            android:screenOrientation="portrait"
+            android:exported="true" />
+        <activity
+            android:name=".DescripcionArticuloActivity"
+            android:screenOrientation="portrait"
+            android:exported="true" />
+        <activity
             android:name=".PagoActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".DireccionesActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".AgregarTarjetaActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".AgregarDireccionActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".IdiomaActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".RecuperarContrasenaActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".PerfilActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".MisPedidosActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".CarritoActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".CategoriaActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".HomeActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".NotificacionesActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".ConfirmacionActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".PedidoActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".RegistrarseActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".IniciarSesionActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -69,6 +94,7 @@
         </activity>
         <activity
             android:name=".MenuActivity"
+            android:screenOrientation="portrait"
             android:exported="true" />
     </application>
 

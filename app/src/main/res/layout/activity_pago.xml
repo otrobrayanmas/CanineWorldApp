@@ -191,12 +191,12 @@
                 android:layout_height="66dp">
 
                 <Button
-                    android:id="@+id/button5"
+                    android:id="@+id/agregartarjeta"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"
                     android:layout_marginTop="15dp"
+                    android:layout_marginEnd="12dp"
                     android:background="@drawable/mybutton"
                     android:fontFamily="sans-serif-medium"
                     android:gravity="center_horizontal|center_vertical"
@@ -212,7 +212,7 @@
                 android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/continuar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"

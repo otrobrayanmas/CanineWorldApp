@@ -4,6 +4,409 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blancoCanino"
     tools:context=".HomeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/s_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.08" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/e_guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.92" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.15" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cs"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@id/guideline2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.30" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/s1_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.08" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/e1_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.92" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="22dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageButton
+
+                            android:id="@+id/menu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/ic_baseline_menu_24" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="22dp"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+
+                        <ImageButton
+                            android:id="@+id/notifications"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="50dp"
+                            android:layout_weight="1"
+
+                            android:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/ic_baseline_notifications_24" />
+
+                        <ImageButton
+                            android:id="@+id/filters"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+
+                            android:backgroundTint="@color/white"
+                            app:srcCompat="@drawable/ic_baseline_filter_list_24" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <SearchView
+                    android:id="@+id/searchView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="#fff"
+                    android:elevation="2dp"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Buscar..."
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/e1_guideline"
+                    app:layout_constraintStart_toStartOf="@id/s1_guideline"
+                    app:layout_constraintTop_toTopOf="@id/guideline1">
+
+                </SearchView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageView
+                android:id="@+id/slider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/slider"
+                app:layout_constraintEnd_toEndOf="@id/e_guideline"
+                app:layout_constraintStart_toStartOf="@id/s_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/cs">
+            </ImageView>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/guideline3"
+                app:layout_constraintEnd_toEndOf="@id/e_guideline"
+                app:layout_constraintStart_toStartOf="@id/s_guideline"
+                app:layout_constraintTop_toBottomOf="@+id/slider">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Novedades"
+                        android:textSize="24sp"
+                        android:textColor="@color/negroCanino"
+                        android:layout_weight="1"
+                        >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/vert1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ver Todo"
+                        android:textSize="24sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/morado2BCanino"
+                        >
+                    </TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@id/s_guideline">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+
+                        <ImageButton
+
+                            android:id="@+id/art1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="178dp"
+                            android:layout_margin="12dp"
+                            android:background="@drawable/rounded_corner"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/camagato" />
+
+                        <TextView
+                            android:id="@+id/textView23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="$30.000"
+                            android:textColor="@color/morado40Canino"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Juguete"
+                            android:textColor="@color/negroCanino"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/art2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="178dp"
+                            android:layout_margin="12dp"
+                            android:background="@drawable/rounded_corner"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/camagato" />
+
+                        <TextView
+                            android:id="@+id/textView32"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="$40.000"
+                            android:textColor="@color/morado40Canino"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView43"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Rascador Gato"
+                            android:textColor="@color/negroCanino"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Más Vendidos"
+                        android:textSize="24sp"
+                        android:textColor="@color/negroCanino"
+                        android:layout_weight="1"
+                        >
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/vert2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ver Todo"
+                        android:textSize="24sp"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textColor="@color/morado2BCanino"
+                        >
+                    </TextView>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline3"
+                    app:layout_constraintStart_toStartOf="@id/s_guideline">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        >
+
+
+                        <ImageButton
+
+                            android:id="@+id/art3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="178dp"
+                            android:layout_margin="12dp"
+                            android:background="@drawable/rounded_corner"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/camagato" />
+
+                        <TextView
+                            android:id="@+id/textView26"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="$30.000"
+                            android:textColor="@color/morado40Canino"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView25"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Juguete"
+                            android:textColor="@color/negroCanino"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:id="@+id/art4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="178dp"
+                            android:layout_margin="12dp"
+                            android:background="@drawable/rounded_corner"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/camagato" />
+
+                        <TextView
+                            android:id="@+id/textView33"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="$40.000"
+                            android:textColor="@color/morado40Canino"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/textView44"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="Rascador Gato"
+                            android:textColor="@color/negroCanino"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

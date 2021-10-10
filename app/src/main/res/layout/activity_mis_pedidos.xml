@@ -75,18 +75,21 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:scaleType="centerInside"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_weight="1"
                 android:layout_margin="12dp"
                 android:background="@color/morado9CCanino"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@drawable/camagato" />
 
             <LinearLayout
+                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -143,15 +146,16 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button3"
+                        android:id="@+id/ordenaragain"
+                        android:layout_marginTop="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/morado9CCanino"
+                        android:background="@color/morado2BCanino"
                         android:fontFamily="sans-serif-medium"
                         android:text="Ordenar de Nuevo"
                         android:textAllCaps="false"
                         android:layout_marginEnd="5dp"
-                        android:textColor="@color/negroCanino"
+                        android:textColor="@color/blancoCanino"
                         android:textSize="21sp"
                         android:layout_weight="1"
                         tools:ignore="TouchTargetSizeCheck" />

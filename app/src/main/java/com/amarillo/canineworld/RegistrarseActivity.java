@@ -3,6 +3,7 @@ package com.amarillo.canineworld;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -25,16 +26,22 @@ public class RegistrarseActivity extends AppCompatActivity {
             }
         });
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
         TextView btn = (TextView) findViewById(R.id.textView11);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(RegistrarseActivity.this, IniciarSesionActivity.class));
+            }
+        });
+
+
+        Button btn1 = (Button)findViewById(R.id.button2);
+
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegistrarseActivity.this, HomeActivity.class));
             }
         });
     }

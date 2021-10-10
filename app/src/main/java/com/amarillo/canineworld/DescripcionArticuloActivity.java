@@ -8,14 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class AgregarTarjetaActivity extends AppCompatActivity {
+public class DescripcionArticuloActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agregar_tarjeta);
+        setContentView(R.layout.activity_descripcion_articulo);
 
-        ImageButton back = (ImageButton)findViewById(R.id.imageButton3);
+
+        ImageButton back = (ImageButton)findViewById(R.id.imageButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,15 +24,27 @@ public class AgregarTarjetaActivity extends AppCompatActivity {
             }
         });
 
+        Button btn = (Button)findViewById(R.id.agregarcar);
 
-        Button btn1 = (Button)findViewById(R.id.at);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(DescripcionArticuloActivity.this, CarritoActivity.class));
+            }
+        });
+
+        Button btn1 = (Button)findViewById(R.id.comprarahora);
 
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(AgregarTarjetaActivity.this, PagoActivity.class));
+                startActivity(new Intent(DescripcionArticuloActivity.this, DireccionesActivity.class));
             }
         });
+
+
+
+
 
 
     }

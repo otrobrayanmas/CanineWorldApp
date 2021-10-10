@@ -7,6 +7,7 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -33,10 +34,7 @@ public class IniciarSesionActivity extends AppCompatActivity {
             }
         });
 
-        if (getSupportActionBar() != null) {
-            getSupportActionBar().hide();
-        }
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
 
         TextView btn = (TextView) findViewById(R.id.textView11);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -51,6 +49,14 @@ public class IniciarSesionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(IniciarSesionActivity.this, RecuperarContrasenaActivity.class));
+            }
+        });
+
+        Button btn2 = (Button)findViewById(R.id.button2);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(IniciarSesionActivity.this, HomeActivity.class));
             }
         });
 
