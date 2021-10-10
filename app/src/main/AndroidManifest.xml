@@ -10,6 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CanineWorld">
         <activity
+            android:name=".PagoActivity"
+            android:exported="true" />
+        <activity
+            android:name=".DireccionesActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AgregarTarjetaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AgregarDireccionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".IdiomaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RecuperarContrasenaActivity"
+            android:exported="true" />
+        <activity
+            android:name=".PerfilActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MisPedidosActivity"
+            android:exported="true" />
+        <activity
+            android:name=".CarritoActivity"
+            android:exported="true" />
+        <activity
             android:name=".CategoriaActivity"
             android:exported="true" />
         <activity

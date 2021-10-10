@@ -1,6 +1,7 @@
 package com.amarillo.canineworld;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -9,6 +10,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
@@ -35,6 +37,22 @@ public class IniciarSesionActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
         WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+        TextView btn = (TextView) findViewById(R.id.textView11);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(IniciarSesionActivity.this, RegistrarseActivity.class));
+            }
+        });
+
+        TextView bt1 = (TextView) findViewById(R.id.textView9);
+        bt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(IniciarSesionActivity.this, RecuperarContrasenaActivity.class));
+            }
+        });
 
     }
 
