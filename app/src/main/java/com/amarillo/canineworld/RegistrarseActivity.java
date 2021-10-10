@@ -3,6 +3,7 @@ package com.amarillo.canineworld;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -17,6 +18,9 @@ public class RegistrarseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         ImageButton back = (ImageButton)findViewById(R.id.imageButton);
         back.setOnClickListener(new View.OnClickListener() {

@@ -26,6 +26,10 @@ public class IniciarSesionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
         ImageButton back = (ImageButton)findViewById(R.id.imageButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,7 +37,6 @@ public class IniciarSesionActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
 
 
         TextView btn = (TextView) findViewById(R.id.textView11);

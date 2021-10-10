@@ -4,6 +4,7 @@
         <item name="android:navigationBarColor">
             @android:color/transparent
         </item>
+        <item name="windowNoTitle">true</item>
 
         <!-- Optional, if your app is drawing behind the status bar also. -->
         <item name="android:statusBarColor">

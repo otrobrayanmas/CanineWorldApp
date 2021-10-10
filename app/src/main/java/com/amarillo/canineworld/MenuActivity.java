@@ -16,6 +16,12 @@ public class MenuActivity extends AppCompatActivity {
 
         TextView btn1 = (TextView) findViewById(R.id.TextInicio);
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
+
+
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
