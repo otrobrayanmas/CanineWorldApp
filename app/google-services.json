@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "914307027277",
+    "project_id": "canineworld-218fd",
+    "storage_bucket": "canineworld-218fd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914307027277:android:079170f3538d5cf2a06704",
+        "android_client_info": {
+          "package_name": "com.amarillo.canineworld"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914307027277-1ao1gfptv7rftghdf1ju6slgto9hn2cg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amarillo.canineworld",
+            "certificate_hash": "247107eb5a79e375425efc8411885aa96617b727"
+          }
+        },
+        {
+          "client_id": "914307027277-fiajhlvgru2b0qhfl2p6n1gvliannqet.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg3bDJsXY5IBEXQIG4ZRMuhgzg0dLizHo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914307027277-fiajhlvgru2b0qhfl2p6n1gvliannqet.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

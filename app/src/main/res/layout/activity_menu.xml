@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="Cerrar Sesión"
+        android:text="Veterinarias"
         android:textColor="@color/morado40Canino"
         android:textSize="27sp"
         app:layout_constraintBottom_toBottomOf="parent"
