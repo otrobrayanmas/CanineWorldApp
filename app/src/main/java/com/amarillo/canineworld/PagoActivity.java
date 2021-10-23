@@ -49,7 +49,7 @@ public class PagoActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_VIEW);
-                String uri= "whatsapp://send?phone="+"+573057383806";
+                String uri= "whatsapp://send?phone="+"+573214942093";
                 sendIntent.setData(Uri.parse(uri));
                 startActivity(sendIntent);
             }
