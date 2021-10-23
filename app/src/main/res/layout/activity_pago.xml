@@ -7,78 +7,125 @@
     android:layout_height="match_parent"
     tools:context=".PagoActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/s_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/e_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.92" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.22" />
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.67" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.77" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.87" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.97" />
 
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white"
+        android:scaleType="fitStart"
+        app:layout_constraintBottom_toTopOf="@+id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.476"
+        app:srcCompat="@drawable/ic_flecha" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Pago"
+        android:textColor="@color/morado40Canino"
+        android:textColorHint="@color/blancoCanino"
+        android:textSize="32dp"
+        app:layout_constraintStart_toStartOf="@id/s_guideline"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/guideline1"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="@id/e_guideline"
+        app:layout_constraintStart_toStartOf="@id/s_guideline"
+        app:layout_constraintBottom_toTopOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/guideline2"
+        >
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
-            android:layout_marginBottom="30dp"
-            android:fitsSystemWindows="true"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-
-                android:layout_width="match_parent"
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:id="@+id/imageButton2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="22dp"
-                    android:backgroundTint="@color/white"
-                    app:srcCompat="@drawable/ic_flecha" />
-
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="35dp"
-
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Pago"
-                    android:textColor="@color/morado40Canino"
-                    android:textColorHint="@color/blancoCanino"
-                    android:textSize="32dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/imageView2"
-                    android:scaleType="centerCrop"
-                    android:layout_gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="160dp"
-                    android:layout_marginTop="30dp"
-                    app:srcCompat="@drawable/tarjetas" />
-
-            </LinearLayout>
+                app:srcCompat="@drawable/tarjetas" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="12dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/textView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
                         android:text="Subtotal"
+                        android:layout_weight="@integer/material_motion_duration_long_1"
                         android:textColor="@color/negroCanino"
                         android:textSize="20sp" />
 
@@ -86,7 +133,6 @@
                         android:id="@+id/textView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="214dp"
                         android:text="$40.000"
                         android:textColor="@color/negroCanino"
                         android:textSize="20sp"
@@ -101,12 +147,11 @@
                     android:orientation="horizontal">
 
                     <TextView
-
                         android:id="@+id/textView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
                         android:text="Descuentos"
+                        android:layout_weight="1"
                         android:textColor="@color/negroCanino"
                         android:textSize="20sp" />
 
@@ -114,7 +159,6 @@
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="230dp"
                         android:text="0%"
                         android:textColor="@color/negroCanino"
                         android:textSize="20sp"
@@ -132,8 +176,8 @@
                         android:id="@+id/textView10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
                         android:text="Envío"
+                        android:layout_weight="1"
                         android:textColor="@color/negroCanino"
                         android:textSize="20sp" />
 
@@ -141,7 +185,6 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="239dp"
                         android:text="$10.000"
                         android:textColor="@color/negroCanino"
                         android:textSize="20sp"
@@ -163,13 +206,12 @@
                     android:layout_marginTop="25dp"
                     android:orientation="horizontal">
 
-
                     <TextView
                         android:id="@+id/textView11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
                         android:text="Total"
+                        android:layout_weight="1"
                         android:textColor="@color/negroCanino"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -178,8 +220,6 @@
                         android:id="@+id/textView13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="243dp"
-                        android:layout_weight="1"
                         android:text="$50.000"
                         android:textColor="@color/negroCanino"
                         android:textSize="20sp"
@@ -188,48 +228,59 @@
 
             </LinearLayout>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="66dp">
-
-                <Button
-                    android:id="@+id/agregartarjeta"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginEnd="12dp"
-                    android:background="@drawable/mybutton"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="Agregar Tarjeta"
-                    android:textAllCaps="false"
-                    android:textColor="@color/blancoCanino"
-                    android:textSize="21sp"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/continuar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="12dp"
-                    android:background="@drawable/mybutton"
-                    android:fontFamily="sans-serif-medium"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="Continuar"
-                    android:textAllCaps="false"
-                    android:textColor="@color/blancoCanino"
-                    android:textSize="21sp"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </RelativeLayout>
 
         </LinearLayout>
-    </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <Button
+        android:id="@+id/agregartarjeta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mybutton"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Agregar Tarjeta"
+        android:textAllCaps="false"
+        android:textColor="@color/blancoCanino"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="@id/e_guideline"
+        app:layout_constraintStart_toStartOf="@id/s_guideline"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@id/guideline3"
+        />
+    <Button
+        android:id="@+id/continuar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mybutton"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Continuar"
+        android:textAllCaps="false"
+        android:textColor="@color/blancoCanino"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="@id/e_guideline"
+        app:layout_constraintStart_toStartOf="@id/s_guideline"
+        app:layout_constraintBottom_toTopOf="@+id/guideline5"
+        app:layout_constraintTop_toTopOf="@id/guideline4"
+        />
+
+    <Button
+        android:id="@+id/wasa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/mybutton"
+        android:drawableRight="@drawable/wasa"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Contactar con el vendedor"
+        android:textAllCaps="false"
+        android:textColor="@color/blancoCanino"
+        android:textSize="21sp"
+        app:layout_constraintEnd_toEndOf="@id/e_guideline"
+        app:layout_constraintStart_toStartOf="@id/s_guideline"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintTop_toTopOf="@id/guideline5"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

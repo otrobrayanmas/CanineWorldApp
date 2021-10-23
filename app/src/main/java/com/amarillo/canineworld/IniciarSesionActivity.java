@@ -64,6 +64,9 @@ public class IniciarSesionActivity extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
+
+
+
         ImageButton back = (ImageButton) findViewById(R.id.imageButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -205,5 +208,7 @@ public class IniciarSesionActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
+
+
 
 }

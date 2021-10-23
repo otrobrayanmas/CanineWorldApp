@@ -9,11 +9,13 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -22,6 +24,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.amarillo.canineworld.databinding.ActivityVeterinariasBinding;
 
@@ -64,6 +67,20 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
 
         mMap = googleMap;
 
+        try{
+            boolean success = googleMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            this,R.raw.mapstyle3));
+
+            if(!success){
+                Log.e("VeterinariasActivity","Style parsing failed.");
+            }
+
+        }catch(Resources.NotFoundException e){
+            Log.e("VeterinariasActivity","No se puede encontrar el estilo: ",e);
+
+        }
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -96,7 +113,7 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
 
 
             LatLng coordinate = new LatLng(latitude, longitude);
-            CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(coordinate, 19);
+            CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(coordinate, 15);
             mMap.animateCamera(yourLocation);
         }
 
