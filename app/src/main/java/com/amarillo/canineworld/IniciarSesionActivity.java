@@ -65,8 +65,6 @@ public class IniciarSesionActivity extends AppCompatActivity {
         }
 
 
-
-
         ImageButton back = (ImageButton) findViewById(R.id.imageButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

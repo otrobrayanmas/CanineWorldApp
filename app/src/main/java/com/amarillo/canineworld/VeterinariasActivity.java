@@ -35,6 +35,8 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
     int REQUEST_CODE=200;
     private static final int REQUEST_ACCESS_FINE_LOCATION = 0;
     LocationManager locationManager;
+    private double latitude, longitude;
+    private int ProximityRdius=200000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +107,19 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
         Location location = locationManager.getLastKnownLocation(provider);
 
 
+        String hospital="hospital";
+        String url = getUrl(latitude,longitude,hospital);
+        Object[] transferData =new Object[2];
+
+        GetNearbyPlaces getNearbyPlaces = new GetNearbyPlaces();
+
+        transferData[0]=mMap;
+        transferData[1]=url;
+
+        getNearbyPlaces.execute(transferData);
+
+
+
         if (location != null) {
             double latitude = location.getLatitude();
             double longitude = location.getLongitude();
@@ -113,9 +128,24 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
 
 
             LatLng coordinate = new LatLng(latitude, longitude);
+
+
+
             CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(coordinate, 15);
             mMap.animateCamera(yourLocation);
+
+
+
         }
+
+
+
+
+
+
+
+
+
 
 
        }
@@ -130,9 +160,28 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
         if (requestCode == REQUEST_ACCESS_FINE_LOCATION) {
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 startActivity(getIntent());
+
                 finish();
+
+
+
             }
         }
+    }
+
+    private String getUrl(double latitude, double longitude, String nearbyPlace){
+
+        StringBuilder googleURL= new StringBuilder("https://maps.googleapis.com/maps/api/place/nearbysearch/json?");
+        googleURL.append("location="+latitude+","+longitude);
+        googleURL.append("&radius="+ProximityRdius);
+        googleURL.append("&type="+nearbyPlace);
+        googleURL.append("&sensor=true");
+        googleURL.append("&key="+"AIzaSyA2AYA-RcplgdjWSn9iXiw_LjIe0yliJnI");
+
+        Log.d("VeterinariasActivity","url = "+googleURL.toString());
+
+        return googleURL.toString();
+
     }
 
 
