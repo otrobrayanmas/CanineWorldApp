@@ -189,19 +189,7 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
         {
 
 
-            case R.id.B_Hospital :
-                mMap.clear(); //remove all the markers from the map
-                String hospital = "hospital";
-                String url = getUrl(latitude , longitude , hospital);
-
-
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
-
-                getNearbyPlacesData.execute(dataTransfer);
-
-                Toast.makeText(this , "Showing Nearby Hospitals", Toast.LENGTH_LONG ).show();
-                break;
+            
 
 
         }

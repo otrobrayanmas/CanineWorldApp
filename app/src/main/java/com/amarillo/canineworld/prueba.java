@@ -260,19 +260,7 @@ public class prueba extends FragmentActivity implements OnMapReadyCallback,
         {
 
 
-            case R.id.B_Hospital :
-                mMap.clear(); //remove all the markers from the map
-                String hospital = "veterinary_care";
-                String url = getUrl(latitude , longitude , hospital);
 
-
-                dataTransfer[0] = mMap;
-                dataTransfer[1] = url;
-
-                getNearbyPlacesData.execute(dataTransfer);
-
-                Toast.makeText(this , "Mostrando Veterinarias Cercanas", Toast.LENGTH_LONG ).show();
-                break;
 
         }
     }
