@@ -32,9 +32,8 @@
 
                 <TextView
                     android:id="@+id/tablaProductos"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/morado2BCanino"
                     android:gravity="center"
                     android:text="Productos"
                     android:textColor="@color/blancoCanino"

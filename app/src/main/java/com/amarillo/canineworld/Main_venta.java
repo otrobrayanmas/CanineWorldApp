@@ -80,8 +80,8 @@ public class Main_venta extends AppCompatActivity {
 
     private void loadAllProducts() {
         productList = new ArrayList<>();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-        reference.child(firebaseAuth.getUid()).child("Products")
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Productos");
+        reference.child("Products")
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

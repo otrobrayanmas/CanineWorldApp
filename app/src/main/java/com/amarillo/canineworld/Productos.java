@@ -210,8 +210,8 @@ public class Productos extends AppCompatActivity {
             hashMap.put("timestamp",""+timestamp);
             hashMap.put("uid",""+firebaseAuth.getUid());
 
-            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-            reference.child(firebaseAuth.getUid()).child("Products").child(timestamp).setValue(hashMap)
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Productos");
+            reference.child("Products").child(timestamp).setValue(hashMap)
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
