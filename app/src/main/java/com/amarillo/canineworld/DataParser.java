@@ -1,5 +1,6 @@
 package com.amarillo.canineworld;
 
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -8,81 +9,102 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+
 public class DataParser {
 
-    private HashMap<String, String> getSingleNearbyPlace(JSONObject googlePlaceJSON){
-        HashMap<String, String> googlePlaceMap=new HashMap<>();
-        String NameOfPlace="-NA-";
-        String vicinity="-NA-";
-        String latitude="-NA-";
-        String longitude="";
-        String reference="";
+    private HashMap<String , String> getPlace(JSONObject googlePlaceJson)
+    {
+        HashMap<String , String> googlePlacesMap = new HashMap<>();
+
+        //store all the parameters using String
+
+        String placeName = "-NA-";
+        String vicinity = "-NA-";
+        String latitude = "";
+        String longitude = "";
+        String reference = "";
 
         try {
-            if(!googlePlaceJSON.isNull("name")){
-                NameOfPlace=googlePlaceJSON.getString("name");
+
+            if (!googlePlaceJson.isNull("name")) {
+                placeName = googlePlaceJson.getString("name");
             }
-            if(!googlePlaceJSON.isNull("vicinity")){
-                vicinity=googlePlaceJSON.getString("vicinity");
+
+            if (!googlePlaceJson.isNull("vicinity")) {
+                vicinity = googlePlaceJson.getString("vicinity");
             }
-            latitude=googlePlaceJSON.getJSONObject("geometry").getJSONObject("location").getString("lat");
-            longitude=googlePlaceJSON.getJSONObject("geometry").getJSONObject("location").getString("lng");
-            reference=googlePlaceJSON.getString("reference");
 
-            googlePlaceMap.put("place_name", NameOfPlace);
-            googlePlaceMap.put("vicinity", vicinity);
-            googlePlaceMap.put("latitude", latitude);
-            googlePlaceMap.put("longitude", longitude);
-            googlePlaceMap.put("reference", reference);
+            latitude = googlePlaceJson.getJSONObject("geometry").getJSONObject("location").getString("lat");
+            longitude = googlePlaceJson.getJSONObject("geometry").getJSONObject("location").getString("lng");
 
+            reference = googlePlaceJson.getString("reference");
 
-        } catch (JSONException e) {
+            googlePlacesMap.put("place_name" , placeName);
+            googlePlacesMap.put("vicinity" , vicinity);
+            googlePlacesMap.put("lat" , latitude);
+            googlePlacesMap.put("lng" , longitude);
+            googlePlacesMap.put("reference" , reference);
+
+        } catch(JSONException e) {
             e.printStackTrace();
+
         }
 
-        return googlePlaceMap;
+        return googlePlacesMap;
+
+        //to store one place we are using a HashMap
     }
 
-    private List<HashMap<String, String>> getAllNearbyPlaces(JSONArray jsonArray){
-        int counter=jsonArray.length();
 
-        List<HashMap<String, String>> NearbyPlacesList = new ArrayList<>();
+    //to store all the places create a list of HashMap
+    private List<HashMap<String,String>> getPlaces(JSONArray jsonArray)
+    {
 
-        HashMap<String, String> NearbyPlaceMap=null;
+        //getPlace returns a HashMap for each place
+        //getPlaces() creates a list of HashMaps
 
-        for(int i=0;i<counter;i++){
+        int count = jsonArray.length();
+        List<HashMap<String,String>> placesList = new ArrayList<>();
+        HashMap<String,String> placeMap = null; //to store each place we fetch
+
+        for(int i=0 ; i<count;i++) {
+
+            //use getPlace method to fetch one place
+            //then , add it to list of hashmap
+
             try {
-                NearbyPlaceMap=getSingleNearbyPlace((JSONObject) jsonArray.get(i) );
-                NearbyPlacesList.add(NearbyPlaceMap);
+                placeMap = getPlace((JSONObject) jsonArray.get(i));
+                placesList.add(placeMap);
+
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
         }
 
-        return NearbyPlacesList;
-
+        return placesList;
     }
 
+    //call this parse method whenever you create Data Parser
+    //it will parse the JSON data n send it to getPlaces method
+    //getPlaces method takes the JSONArray
+    //will call getPlace method to fetch each element for each place and store it in a list
+    //return the list to parse method
 
-    public List<HashMap<String, String>> parse(String jSONdata){
-
-        JSONArray jsonArray=null;
+    public List<HashMap<String,String>> parse(String jsonData)
+    {
+        JSONArray jsonArray = null;
         JSONObject jsonObject;
 
         try {
-            jsonObject=new JSONObject(jSONdata);
-            jsonArray=jsonObject.getJSONArray("results");
+            jsonObject = new JSONObject(jsonData);
+            jsonArray = jsonObject.getJSONArray("results");
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
 
-        return getAllNearbyPlaces(jsonArray);
-
+        return getPlaces(jsonArray);
     }
-
-
-
-
-
 }

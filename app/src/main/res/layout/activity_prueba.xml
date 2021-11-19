@@ -5,22 +5,12 @@
     tools:context=".prueba">
 
 
-    <EditText
-        android:id="@+id/TF_location"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:ems="10"
-        android:inputType="textPersonName" />
-
 
     <Button
         android:id="@+id/B_Hospital"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/blancoCanino"
-        android:layout_below="@id/TF_location"
         android:onClick="onClick"
         android:text="Buscar Veterinarias" />
 

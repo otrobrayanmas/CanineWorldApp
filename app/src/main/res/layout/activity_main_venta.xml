@@ -9,28 +9,54 @@
     <RelativeLayout
         android:id="@+id/productos"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:background="@color/morado2BCanino"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:orientation="horizontal"
+            android:gravity="center"
             android:padding="5dp">
 
-            <TextView
-                android:id="@+id/tablaProductos"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Productos"
-                android:background="@color/morado2BCanino"
-                android:textColor="@color/blancoCanino" />
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:padding="5dp">
 
+                <TextView
+                    android:id="@+id/tablaProductos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/morado2BCanino"
+                    android:gravity="center"
+                    android:text="Productos"
+                    android:textColor="@color/blancoCanino"
+                    android:textSize="20dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:layout_weight="1"
+                >
+
+                <ImageButton
+                    android:layout_weight="1"
+                    android:id="@+id/masPr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/morado2BCanino"
+                    android:src="@drawable/ic_baseline_add_24"
+                    />
+            </LinearLayout>
 
         </LinearLayout>
     </RelativeLayout>
@@ -67,8 +93,8 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/productosLista"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/TextoProductos"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/activity_all_products" />

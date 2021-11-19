@@ -63,7 +63,7 @@
             >
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imagenDesccripcion"
                 android:layout_width="match_parent"
                 android:layout_height="216dp"
                 android:background="@color/morado9CCanino"

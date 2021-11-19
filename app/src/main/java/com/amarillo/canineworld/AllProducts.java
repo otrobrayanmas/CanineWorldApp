@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,7 @@ public class AllProducts extends RecyclerView.Adapter<AllProducts.ProductSeller>
    public void onBindViewHolder(@NonNull ProductSeller holder, int position) {
       ModelProductos modelProductos = productList.get(position);
       String id = modelProductos.getProductId();
-      String uid = modelProductos.getUid();
+      final String uid = modelProductos.getUid();
       String discountAvailable = modelProductos.getDiscountAvailable();
       String discountPrice = modelProductos.getProductDescPrecio();
       String descuentoPorc = modelProductos.getProductDescPor();
@@ -59,7 +60,6 @@ public class AllProducts extends RecyclerView.Adapter<AllProducts.ProductSeller>
          holder.valorNote.setVisibility(View.GONE);
          holder.descuentoNote.setVisibility(View.GONE);
       }
-
 
    }
 

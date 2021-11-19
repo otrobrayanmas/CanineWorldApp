@@ -127,6 +127,19 @@ public class IniciarSesionActivity extends AppCompatActivity {
                 break;
         }
 
+        promptInfo = new BiometricPrompt.PromptInfo.Builder()
+                .setTitle("Biometric login for my app")
+                .setSubtitle("Log in using your biometric credential")
+                .setNegativeButtonText("Use account password")
+                .build();
+
+        // Prompt appears when user clicks "Log in".
+        // Consider integrating with the keystore to unlock cryptographic operations,
+        // if needed by your app.
+        imageViewLogin.setOnClickListener(view -> {
+            biometricPrompt.authenticate(promptInfo);
+        });
+
         executor = ContextCompat.getMainExecutor(this);
         biometricPrompt = new BiometricPrompt(IniciarSesionActivity.this,
                 executor, new BiometricPrompt.AuthenticationCallback() {
@@ -143,9 +156,7 @@ public class IniciarSesionActivity extends AppCompatActivity {
             public void onAuthenticationSucceeded(
                     @NonNull BiometricPrompt.AuthenticationResult result) {
                 super.onAuthenticationSucceeded(result);
-                startActivity(new Intent(IniciarSesionActivity.this,HomeActivity.class));
-                Toast.makeText(getApplicationContext(),
-                        "Authentication succeeded!", Toast.LENGTH_SHORT).show();
+                loginBiometric();
             }
 
             @Override
@@ -156,19 +167,6 @@ public class IniciarSesionActivity extends AppCompatActivity {
                         .show();
             }
         });
-
-        promptInfo = new BiometricPrompt.PromptInfo.Builder()
-                .setTitle("Biometric login for my app")
-                .setSubtitle("Log in using your biometric credential")
-                .setNegativeButtonText("Use account password")
-                .build();
-
-        // Prompt appears when user clicks "Log in".
-        // Consider integrating with the keystore to unlock cryptographic operations,
-        // if needed by your app.
-        imageViewLogin.setOnClickListener(view -> {
-            biometricPrompt.authenticate(promptInfo);
-        });
     }
 
     private void PerforLogin() {
@@ -176,9 +174,9 @@ public class IniciarSesionActivity extends AppCompatActivity {
         String contrasena1 = contrasena.getText().toString();
 
         if (!email1.matches(emailPatter)) {
-            email.setError("Enter connext email");
+            email.setError("Correo incorrecto");
         } else if (contrasena1.isEmpty() || contrasena1.length() < 6) {
-            contrasena.setError("Enter proper password");
+            contrasena.setError("Contraseña incorrecta");
         } else {
             progressDialog.setMessage("Iniciando sesión....");
             progressDialog.setCanceledOnTouchOutside(false);
@@ -201,6 +199,41 @@ public class IniciarSesionActivity extends AppCompatActivity {
 
         }
     }
+
+    private void loginBiometric(){
+
+        String email2 = email.getText().toString();
+        String contrasena1 = contrasena.getText().toString();
+
+        if (!email2.matches(emailPatter)) {
+            email.setError("Correo incorrecto");
+        } else if (contrasena1.isEmpty() || contrasena1.length() < 6) {
+            contrasena.setError("Contraseña incorrecta");
+        } else {
+            progressDialog.setMessage("Iniciando sesión....");
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+
+            mAuth.signInWithEmailAndPassword(email2,contrasena1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful()){
+                        progressDialog.dismiss();
+                        sendUserToNextActivity();
+                        Toast.makeText(IniciarSesionActivity.this,"Inicio de sesión completado", Toast.LENGTH_SHORT);
+                    }else{
+                        progressDialog.dismiss();
+                        Toast.makeText(IniciarSesionActivity.this,""+task.getException(), Toast.LENGTH_SHORT);
+                    }
+                }
+            });
+
+
+        }
+
+
+    }
+
     private void sendUserToNextActivity() {
         Intent intent = new Intent(IniciarSesionActivity.this, HomeActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);

@@ -3,12 +3,16 @@ package com.amarillo.canineworld;
 import android.Manifest;
 import android.app.Activity;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.location.Address;
+import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Build;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,12 +30,15 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -39,7 +46,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 
-public class VeterinariasActivity extends FragmentActivity implements OnMapReadyCallback,
+public class prueba extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
@@ -51,16 +58,15 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
     private Marker currentLocationMarker;
     public static final int REQUEST_LOCATION_CODE = 99;
     int PROXIMITY_RADIUS = 10000;
-    double latitude,longitude;
+    double latitude, longitude;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_veterinarias);
+        setContentView(R.layout.activity_prueba);
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-        {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
         }
 
@@ -113,13 +119,24 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        if(ContextCompat.checkSelfPermission(this , Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+        try {
+            boolean success = googleMap.setMapStyle(
+                    MapStyleOptions.loadRawResourceStyle(
+                            this, R.raw.mapstyle3));
+
+            if (!success) {
+                Log.e("VeterinariasActivity", "Style parsing failed.");
+            }
+
+        } catch (Resources.NotFoundException e) {
+            Log.e("VeterinariasActivity", "No se puede encontrar el estilo: ", e);
+
+        }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
-
-
-
 
     }
 
@@ -147,25 +164,79 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
 
         //remove the marker if already set to some other place
 
-        if(currentLocationMarker != null) {
+        if (currentLocationMarker != null) {
             currentLocationMarker.remove();
         }
 
         //get he lat and lon to set the marker to it
 
-        LatLng latLng = new LatLng(location.getLatitude() , location.getLongitude());
+        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
 
         MarkerOptions markerOptions = new MarkerOptions(); //to set properties to that marker
         markerOptions.position(latLng);
-        markerOptions.title("CURRENT LOCATION");
+        markerOptions.title("MI UBICACIÓN");
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE));
 
         currentLocationMarker = mMap.addMarker(markerOptions);
 
+        LatLng canine= new LatLng(4.7120068,-74.2218327);
+        mMap.addMarker(new MarkerOptions().position(canine).icon(BitmapDescriptorFactory.fromResource(R.drawable.caninem)).title("Canine World"));
+
+        LatLng vet1= new LatLng(4.6442632,-74.1275964);
+        mMap.addMarker(new MarkerOptions().position(vet1).icon(BitmapDescriptorFactory.fromResource(R.drawable.caninem2)).title("PET CLINICAL"));
+
+        LatLng vet2= new LatLng(4.6527965,-74.0607978);
+        mMap.addMarker(new MarkerOptions().position(vet2).icon(BitmapDescriptorFactory.fromResource(R.drawable.caninem2)).title("DOGOS VETERINARIA"));
+
+        LatLng vet3= new LatLng(4.7087794,-74.1122518);
+        mMap.addMarker(new MarkerOptions().position(vet3).icon(BitmapDescriptorFactory.fromResource(R.drawable.caninem2)).title("ClÍnica Veterinaria MascoPet"));
+
+        LatLng vet4= new LatLng(4.7005703,-74.0448137);
+        mMap.addMarker(new MarkerOptions().position(vet4).icon(BitmapDescriptorFactory.fromResource(R.drawable.caninem2)).title("ClÍnica Dover S.A.S"));
+
+        LatLng vet5= new LatLng(4.6319884,-74.0820723);
+        mMap.addMarker(new MarkerOptions().position(vet5).icon(BitmapDescriptorFactory.fromResource(R.drawable.caninem2)).title("Veterinaria Chatos"));
+
+
+
+        LatLng myPosition;
+
+        LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+        Criteria criteria = new Criteria();
+        String provider = locationManager.getBestProvider(criteria, true);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        Location location1 = locationManager.getLastKnownLocation(provider);
+
+
+        if (location1 != null) {
+            double latitude = location.getLatitude();
+            double longitude = location.getLongitude();
+            LatLng latLng1 = new LatLng(latitude, longitude);
+            myPosition = new LatLng(latitude, longitude);
+
+
+            LatLng coordinate = new LatLng(latitude, longitude);
+
+
+
+            CameraUpdate yourLocation = CameraUpdateFactory.newLatLngZoom(coordinate, 15);
+            mMap.animateCamera(yourLocation);
+
+
+
+        }
+
         //now we need to move camera to that loaction
 
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-        mMap.animateCamera(CameraUpdateFactory.zoomBy(5));
 
         //stop the location update once it is set
 
@@ -191,7 +262,7 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
 
             case R.id.B_Hospital :
                 mMap.clear(); //remove all the markers from the map
-                String hospital = "hospital";
+                String hospital = "veterinary_care";
                 String url = getUrl(latitude , longitude , hospital);
 
 
@@ -200,9 +271,8 @@ public class VeterinariasActivity extends FragmentActivity implements OnMapReady
 
                 getNearbyPlacesData.execute(dataTransfer);
 
-                Toast.makeText(this , "Showing Nearby Hospitals", Toast.LENGTH_LONG ).show();
+                Toast.makeText(this , "Mostrando Veterinarias Cercanas", Toast.LENGTH_LONG ).show();
                 break;
-
 
         }
     }

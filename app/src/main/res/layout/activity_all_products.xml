@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     tools:context=".AllProducts">
 
     <RelativeLayout
@@ -10,44 +10,44 @@
         android:layout_height="wrap_content">
 
         <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:id="@+id/productIcon"
-        android:layout_centerVertical="true"
-        android:layout_marginEnd="5dp"
-        android:src = "@drawable/ic_baseline_add_shopping_cart_24"
-        />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:orientation = "vertical"
-        android:layout_toEndOf="@id/productIcon"
-        >
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/productIcon"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="5dp"
+            android:src = "@drawable/ic_baseline_add_shopping_cart_24"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation = "vertical"
+            android:layout_toEndOf="@id/productIcon"
+            >
 
-        <TextView
-            android:id="@+id/descuentoNote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="10% OFF"
-            android:textColor="@color/morado9CCanino"
-            />
-        <TextView
-            android:id="@+id/titleNote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombre"
-            android:textColor="@color/negroCanino"
-            android:layout_below="@id/descuentoNote"
-            />
-        <TextView
-            android:id="@+id/valorNote"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="$10.000"
-            android:textColor="@color/negroCanino"
-            android:layout_below="@id/titleNote"
-            />
+            <TextView
+                android:id="@+id/descuentoNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10% OFF"
+                android:textColor="@color/morado9CCanino"
+                />
+            <TextView
+                android:id="@+id/titleNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre"
+                android:textColor="@color/negroCanino"
+                android:layout_below="@id/descuentoNote"
+                />
+            <TextView
+                android:id="@+id/valorNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$10.000"
+                android:textColor="@color/negroCanino"
+                android:layout_below="@id/titleNote"
+                />
 
         </LinearLayout>
     </RelativeLayout>

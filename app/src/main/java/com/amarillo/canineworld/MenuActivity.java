@@ -81,7 +81,7 @@ public class MenuActivity extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuActivity.this, VeterinariasActivity.class));
+                startActivity(new Intent(MenuActivity.this, prueba.class));
             }
         });
 
