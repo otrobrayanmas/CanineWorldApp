@@ -86,7 +86,7 @@ public class HomeActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(HomeActivity.this, Productos.class));
+                startActivity(new Intent(HomeActivity.this, CategoriaActivity.class));
             }
         });
 

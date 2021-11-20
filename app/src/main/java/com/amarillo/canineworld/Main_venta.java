@@ -4,11 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -49,6 +51,14 @@ public class Main_venta extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         loadAllProducts();
         showProductsUi();
+
+        ImageButton more= (ImageButton) findViewById(R.id.masPr);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Main_venta.this, Productos.class));
+            }
+        });
 
         busquedaProductos.addTextChangedListener(new TextWatcher() {
             @Override
